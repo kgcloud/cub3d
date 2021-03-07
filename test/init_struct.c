@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
+/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 12:48:37 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/27 13:11:13 by cloud            ###   ########.fr       */
+/*   Updated: 2021/03/07 17:07:01 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	initcub(t_cub *cub)
 {
 	cub->x = 0;
 	cub->y = 0;
-	cub->ret = 0;
+	cub->ret = 1;
 	cub->fd = 0;
 	cub->R = 0;
 	cub->NO = 0;
@@ -37,6 +37,7 @@ void	initcub(t_cub *cub)
 	cub->F = 0;
 	cub->C = 0;
 	cub->i = 0;
+	cub->map = NULL;
 	cub->line = NULL;
 	cub->no = NULL;
 	cub->so = NULL;

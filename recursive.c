@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   recursive.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
+/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 14:14:29 by canjugun          #+#    #+#             */
-/*   Updated: 2021/03/05 17:19:04 by cloud            ###   ########.fr       */
+/*   Updated: 2021/03/07 16:42:07 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,27 +67,27 @@ int		recursive(char tab[9][9], int x, int y)
 
 int		recursivetab(char tab[9][9])
 {
-	int x = 4;
-	int y = 3;
+	int x = 2;
+	int y = 2;
 	
 	printf("%d\n", recursive(tab,x,y));
 	return (0);
 }
 
-/*int			main()
+int			main()
 {
 	char tab[9][9] = { 
 						"11111111",
+						"10001001",
+						"10001001",
+						"10001001",
+						"10001",
+						"11111111",
 						"10000001",
-						"10000001",
-						"10000001",
-						"10000001",
-						" ",
-						"10000001",
-						"11111111", 
+						"11011111", 
 								}	;
 	
 	printtab(tab);
 	recursivetab(tab);
 	printtab(tab);
-}*/
+}

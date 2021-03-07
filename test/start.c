@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
+/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:46:32 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/05 17:20:13 by cloud            ###   ########.fr       */
+/*   Updated: 2021/03/07 17:07:32 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,17 +144,24 @@ int		recupinfo(t_cub *cub, char **av)
 		return (-1);
 	if ((cub->fd = open(av[1], O_RDONLY)) == -1)
 		return (-1);
-	while (1)
+	//cub->map = malloc(sizeof(char*) * 1);
+	//cub->map[0] = malloc(sizeof(char) * 1);
+	while (cub->ret)
     {
         cub->ret = get_next_line(cub->fd, &cub->line);
-        if (ft_strlen(cub->line) > cub->x)
-			cub->x = ft_strlen(cub->line);
 		if (transit(cub) == -1)
 			return (-1);
 		free(cub->line);
-		cub->y++;
-		if (!cub->ret)
-            break ;
+		if (cub->R == 1 && cub->NO == 1 && cub->SO == 1 && cub->WE == 1 && cub->EA == 1 && cub->S == 1 && cub->F == 1 && cub->C == 1)
+			while(cub->ret)
+			{
+				cub->ret = get_next_line(cub->fd, &cub->line);
+				if (ft_strlen(cub->line) > cub->x)
+					cub->x = ft_strlen(cub->line);
+				cub->y++;
+				cub->map = ft_realloc(cub);
+				free(cub->line);
+			}
     }
 	return (0);
 }
@@ -204,5 +211,7 @@ int			main(int ac, char **av)
 		printf("Error\nprob dans recup");
 		return (0);
 	}
+	//checkmap(cub);
 	printtest(cub);
+	
 }
