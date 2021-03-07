@@ -1,0 +1,6 @@
+ : Une ligne vide dans la map :  --- > check
+ : Un caractère incorrect dans la map, genre un 4 -- > check
+ : Une map ouverte -- > check
+ : La map est avant un autre élément -- > pas encore check
+ : Il n’y a pas de map ----> pas encore check
+ : Pas de joueur ou plusieurs joueurs --- > [as encore check]
