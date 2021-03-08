@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:46:32 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/07 17:07:32 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/03/08 18:07:19 by cloud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,7 +211,11 @@ int			main(int ac, char **av)
 		printf("Error\nprob dans recup");
 		return (0);
 	}
-	//checkmap(cub);
+	if (checkmap(cub) == -1)
+	{
+		printf("Error\nprob dans la map et ftg");
+		return (0);
+	}
 	printtest(cub);
 	
 }

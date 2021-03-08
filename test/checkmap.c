@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkmap.c                                         :+:      :+:    :+:   */
+/*   checkmap[i].c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 16:53:04 by canjugun          #+#    #+#             */
-/*   Updated: 2021/03/07 17:26:09 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/03/08 17:11:34 by cloud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,23 @@ int		checkmap(t_cub *cub)
 	j = 0;
 	while (i--)
 	{
-		while (cub->map[j++])
+		while (cub->map[i][j++])
 		{	
-			if (cub->map[j] != '0' && cub->map[j] != '1' && cub->map[j] != '2' && cub->map[j])
+			if (cub->map[i][j] != '0' && cub->map[i][j] != '1' && cub->map[i][j] != '2' && cub->map[i][j] != ' ')
 			{
-				while (cub->map[j] == ' ')
-				if (cub->map == 'N' || cub->map == 'O' || cub->map == 'E' || cub->map == 'S')
+				if (cub->map[i][j] == 'N' || cub->map[i][j] == 'O' || cub->map[i][j] == 'E' || cub->map[i][j] == 'S')
 				{
+					if (cub->check != 0)
+						return (-1);
+					cub->check = 1;
 					cub->px = j;
 					cub->py = i;
 				}
 				else
-					return (-1)
+					return (-1);
 			}
-		j = 0;
 		}
+		j = 0;
 	}
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   realloc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 15:20:35 by canjugun          #+#    #+#             */
-/*   Updated: 2021/03/07 17:00:12 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/03/08 17:14:42 by cloud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ char		**ft_realloc(t_cub *cub)
 	new_ptr = malloc(sizeof(char*) * cub->y);
 	while (--j)
 	{
-		new_ptr[i] = ft_strdup(cub->map[i]);
-		free(cub->map[i]);
+		new_ptr[i] = cub->map[i];
 		i++;
 	}
 	new_ptr[i] = ft_strdup(cub->line);

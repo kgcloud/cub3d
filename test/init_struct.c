@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 12:48:37 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/07 17:07:01 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/03/08 17:17:47 by cloud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	initcub(t_cub *cub)
 	cub->we = NULL;
 	cub->ea = NULL;
 	cub->s = NULL;
+	cub->check  = 0;
 	cub->rx = 0;
 	cub->ry = 0;
 }
