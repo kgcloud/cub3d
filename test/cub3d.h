@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
+/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 18:53:15 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/08 17:09:41 by cloud            ###   ########.fr       */
+/*   Updated: 2021/03/09 16:26:01 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ typedef struct	s_cub
 	int		i;
 	int		px;
 	int		py;
-	int		check;
+	char	check;
+	int		open;
 }				t_cub;
 
 int		get_next_line(int const fd, char **line);
@@ -71,5 +72,6 @@ char	*ft_itoa(int n);
 void	printtest(t_cub *cub);
 char	**ft_realloc(t_cub *cub);
 int		checkmap(t_cub *cub);
+int		recursivemap(t_cub *cub, int x, int y);
 
 #endif

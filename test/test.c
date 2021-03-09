@@ -5,18 +5,18 @@ void	printtest(t_cub *cub)
 	int i;
 	int j;
 
-	i = cub->y;
+	i = 0;
 	j = 0;
-	printf("cub->no %s\n", cub->no);
+	/*printf("cub->no %s\n", cub->no);
 	printf("cub->so %s\n", cub->so);
 	printf("cub->we %s\n", cub->we);
 	printf("cub->ea %s\n", cub->ea);
 	printf("cub->s %s\n", cub->s);
 	printf("rx - > %d, ry -> %d\n", cub->rx, cub->ry);
-	printf("x - > %d, y -> %d\n\n", cub->x, cub->y);
-	while (i--)
+	printf("x - > %d, y -> %d\n\n", cub->x, cub->y);*/
+	while (i < cub->y)
 	{
-		printf("%s\n", cub->map[j]);
-		j++;
+		printf("%s\n", cub->map[i]);
+		i++;
 	}
 }

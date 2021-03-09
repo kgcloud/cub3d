@@ -18,10 +18,10 @@ int		checkmap(t_cub *cub)
 	int	j;
 
 	i = cub->y;
-	j = 0;
+	j = -1;
 	while (i--)
 	{
-		while (cub->map[i][j++])
+		while (cub->map[i][++j])
 		{	
 			if (cub->map[i][j] != '0' && cub->map[i][j] != '1' && cub->map[i][j] != '2' && cub->map[i][j] != ' ')
 			{
@@ -29,7 +29,8 @@ int		checkmap(t_cub *cub)
 				{
 					if (cub->check != 0)
 						return (-1);
-					cub->check = 1;
+					cub->check = cub->map[i][j];
+					cub->map[i][j] = '0';
 					cub->px = j;
 					cub->py = i;
 				}
@@ -37,7 +38,39 @@ int		checkmap(t_cub *cub)
 					return (-1);
 			}
 		}
-		j = 0;
+		j = -1;
 	}
+	cub->check != 0 ? j = 0 : j;
+	return (j);
+}
+
+int		recursivemap(t_cub *cub, int x, int y)
+{
+	if (x <= 0 || y <= 0 || x > cub->x || y > cub->y)
+		return (-1);
+	if (cub->map[x][y] != '0')
+	{
+		if (cub->map[x][y] != '1' && cub->map[x][y] != '2' && cub->map[x][y] != '9')
+			return (-1);
+		else
+			return (0);
+	}
+	cub->map[x][y] = '9';
+	if (recursivemap(cub, x + 1, y) == - 1)
+		return (-1);
+	if (recursivemap(cub, x, y - 1) == - 1)
+		return (-1);
+	if (recursivemap(cub, x - 1, y) == - 1)
+		return (-1);
+	if (recursivemap(cub, x, y + 1) == - 1)
+		return (-1);
+	if (recursivemap(cub, x + 1, y + 1) == - 1)
+		return (-1);
+	if (recursivemap(cub, x - 1, y - 1) == - 1)
+		return (-1);
+	if (recursivemap(cub, x + 1, y - 1) == - 1)
+		return (-1);
+	if (recursivemap(cub, x - 1, y + 1) == - 1)
+		return (-1);
 	return (0);
 }
