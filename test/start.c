@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:46:32 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/09 16:37:13 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/03/09 18:36:38 by cloud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,8 +219,12 @@ int			main(int ac, char **av)
 	printtest(cub);
 	printf("avant : px - > %d, py -> %d\n", cub->px, cub->py);
 	cub->open = 0;
-	recursivemap(cub, cub->px, cub->py);
+	if (check_wall(cub))
+	{
+		printf("Error\nrecursiv");
+		//return (0);
+	}
+	
 	printf("apres : px - > %d, py -> %d\n", cub->px, cub->py);
 	printtest(cub);
-	
 }

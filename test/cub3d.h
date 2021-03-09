@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 18:53:15 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/09 16:26:01 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/03/09 18:53:46 by cloud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,9 @@ char	*ft_itoa(int n);
 void	printtest(t_cub *cub);
 char	**ft_realloc(t_cub *cub);
 int		checkmap(t_cub *cub);
-int		recursivemap(t_cub *cub, int x, int y);
+int		check_wall(t_cub *cub);
+int		recursivemap(t_cub *cub, int x, int y, int space);
+char	*ft_strchr(char *str, int c);
+void	*ft_memset(void *b, int c, size_t len);
 
 #endif
