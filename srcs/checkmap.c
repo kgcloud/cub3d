@@ -22,22 +22,16 @@ int		checkmap(t_cub *cub)
 	{
 		j = -1;
 		while (cub->map[i][++j])
-		{	
 			if (!ft_strchr("012 ", cub->map[i][j]))
-			{				
-				if (ft_strchr("NOES", cub->map[i][j]))
-				{
-					if (cub->check != 0)
-						return (-1);
-					cub->check = cub->map[i][j];
-					cub->map[i][j] = '0';
-					cub->px = j;
-					cub->py = i;
-				}
-				else
+			{
+				if (!ft_strchr("NOES", cub->map[i][j]) ||
+					cub->check != 0)
 					return (-1);
+				cub->check = cub->map[i][j];
+				cub->map[i][j] = '0';
+				cub->px = j;
+				cub->py = i;
 			}
-		}
 	}
 	return ((!cub->check) * j);
 }
@@ -53,32 +47,29 @@ int check_wall(t_cub *cub)
 	while (++y < cub->y)
 	{
 		x = -1;
-		while (++x < cub->x)
+		while (++x < cub->x && cub->map[y][x])
 			if (cub->map[y][x] == '0' &&
 				recursivemap(cub, x, y, 1) == -1)
-				return (-1);
+					return (-1);
 	}
 	return (0);
 }
 
 int		recursivemap(t_cub *cub, int x, int y, int space)
 {
-
 	if (x < 0 || y < 0 || x >= cub->x || y >= cub->y ||
 	 ((x == 0 || y == 0 || x == cub->x - 1 || y == cub->y - 1) && cub->map[y][x] != '1'))
 		return (-1);
 	if (cub->map[y][x] != '0' &&
 		(cub->map[y][x] != ' ' || !space))
-			return (-!ft_strchr("129", cub->map[y][x]));
+		return (-!ft_strchr("129", cub->map[y][x]));
 	cub->map[y][x] = '9';
-	if (recursivemap(cub, x + 1, y, space) == -1 ||
+	return (-(recursivemap(cub, x + 1, y, space) == -1 ||
 		recursivemap(cub, x, y - 1, space) == -1 ||
 		recursivemap(cub, x - 1, y, space) == -1 ||
 		recursivemap(cub, x, y + 1, space) == -1 ||
 		recursivemap(cub, x + 1, y + 1, space) == -1 ||
 		recursivemap(cub, x - 1, y - 1, space) == -1 ||
 		recursivemap(cub, x + 1, y - 1, space) == -1 ||
-		recursivemap(cub, x - 1, y + 1, space) == -1)
-		return (-1);
-	return (0);
+		recursivemap(cub, x - 1, y + 1, space) == -1));
 }

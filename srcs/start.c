@@ -6,7 +6,7 @@
 /*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:46:32 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/11 14:12:58 by cloud            ###   ########.fr       */
+/*   Updated: 2021/03/11 15:18:32 by cloud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int			main(int ac, char **av)
 	ft_strcmp(av[1] + (ft_strlen(av[1]) - 4), ".cub")
 	 || !recupinfo(cub, av)) 
 		return (error(cub)); 
-	printtest(cub);
+//	printtest(cub);
 	checkmap(cub);
 	printf("%d\n", check_wall(cub));
-	printtest(cub);
+//	printtest(cub);
 }
