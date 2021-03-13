@@ -6,7 +6,7 @@
 /*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 14:49:18 by canjugun          #+#    #+#             */
-/*   Updated: 2021/03/11 14:59:55 by cloud            ###   ########.fr       */
+/*   Updated: 2021/03/13 15:36:34 by cloud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	printtest(t_cub *cub)
 {
 	int i;
-	int j;
 
 	i = 0;
-	j = 0;
 	/*printf("cub->no %s\n", cub->no);
 	printf("cub->so %s\n", cub->so);
 	printf("cub->we %s\n", cub->we);

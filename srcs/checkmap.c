@@ -18,6 +18,7 @@ int		checkmap(t_cub *cub)
 	int	j;
 
 	i = cub->y;
+	j = 0;
 	while (i--)
 	{
 		j = -1;
