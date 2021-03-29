@@ -1,20 +1,4 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: cloud <cloud@student.42.fr>                +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/03/13 15:35:45 by cloud             #+#    #+#              #
-#    Updated: 2021/03/13 16:15:27 by cloud            ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-CC = gcc
-
-CFLAGS = -Wall -Wextra -Werror
-
-SRC = checkmap.c \
+SRC =	checkmap.c \
 ft_error.c \
 get_next_line.c \
 get_next_line_utils.c \
@@ -25,19 +9,44 @@ realloc.c \
 start.c \
 transit.c \
 
-OBJ = ${SRC:.c=.o}
+NAME = Cub3D
 
-NAME = cub.a
+MLX_DIR = mlx
+MLX = libmlx.dylib
+CC = clang
 
-LINK = ar rc
+CFLAGS = -Wall -Wextra -Werror -g
 
-$(NAME):		$(OBJ)
-	$(LINK)		$(NAME) 	$(OBJ)
+OBJ = $(SRC:.c=.o)
+DPD = $(SRC:.c=.d)
 
-all:		$(NAME)
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+all:
+	@$(MAKE) -C $(MLX_DIR)
+	@$(MAKE) -j $(NAME)
+
+$(NAME): $(OBJ)
+		${CC} $(CFLAGS) -o $(NAME) $(OBJ) -L $(MLX_DIR) -l mlx
+		@install_name_tool -change $(MLX) @loader_path/$(MLX_DIR)/$(MLX) $(NAME)
+		@echo $(NAME) : Created !
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(MLX_DIR)/$(MLX) | .gitignore
+		${CC} $(CFLAGS) -I $(INC_DIR) -I $(MLX_DIR) -c $< -o $@
+
+.gitignore:
+		@echo $(NAME) > .gitignore
 
 clean:
-			rm -f $(OBJ)
+	@$(MAKE) clean -C $(MLX_DIR)
+	@rm -rf *.o
 
-fclean:		clean
-			rm -f $(NAME)
+fclean:	clean
+	@rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: all, clean, fclean, re
+
+-include $(DPD)

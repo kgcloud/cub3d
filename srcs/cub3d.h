@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
+/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 18:53:15 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/11 14:13:43 by cloud            ###   ########.fr       */
+/*   Updated: 2021/03/29 15:15:03 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ void	*ft_memset(void *b, int c, size_t len);
 int		transit(t_cub *cub);
 int			error(t_cub *cub);
 int		argumenterr(int ac, char **av);
+int			start(int ac, char **av);
 
 #endif
