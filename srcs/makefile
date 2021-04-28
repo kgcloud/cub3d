@@ -40,7 +40,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(MLX_DIR)/$(MLX) | .gitignore
 
 clean:
 	@$(MAKE) clean -C $(MLX_DIR)
-	@rm -rf *.o
+	@rm -rf $(OBJ)
 
 fclean:	clean
 	@rm -rf $(NAME)
