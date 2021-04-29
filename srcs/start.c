@@ -6,7 +6,7 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:46:32 by cloud             #+#    #+#             */
-/*   Updated: 2021/04/28 12:57:37 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/29 13:47:19 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,8 @@ int		recupinfo(t_cub *cub, char **av)
 	return (1);
 }
 
-int			start(int ac, char **av)
+int			start(int ac, char **av,t_cub *cub)
 {
-    t_cub *cub;
-
 	if (!(cub = malloc(sizeof(t_cub))))
 		return (-1);
 	initcub(cub);
@@ -80,31 +78,39 @@ void             printcub(t_cub *cub)
     void    *mlx;
     void    *mlx_win;
     t_data  img;
+	double posX = 22;
+	double posY = 12;
+	double dirX = -1;
+	double dirY = 0;
+	double planeX = 0;
+	double PlaneY = 66/100;
+	double temps = 0;
+	double oldtime = 0;
 
-    mlx = mlx_init();
+	mlx = mlx_init();
     mlx_win = mlx_new_window(mlx, 1920, 1080, "!CUB3D");
     img.img = mlx_new_image(mlx, 920, 1080);
     img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
                                  &img.endian);
     int a = 100;
 	int b = 100;
-	while(b++ < 200)
-	{	
-		while (a++ < 200)
-			my_mlx_pixel_put(&img,a,b, 0x00FF0000);
-		a = 100;
+	while(1)
+	{
+		for (x = 0; x<w; x++)
+		{
+			double cameraX = 2 *x / double w = w - 1;
+			double raydirX = dirx + planeX * cameraX;
+			double raydirY = dirY + PlaneY * cameraX;
+		}
 	}
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
     mlx_loop(mlx);
 }
 
-start_raycast(t_cub *cub)
-{
-	
-}
-
 int		main(int ac, char **av)
 {
-	start_parsing(ac, av);
-	start_raycast(t_cub *cub);
+	t_cub *cub;
+	
+	start(ac, av,cub);
+	printcub(cub);
 }

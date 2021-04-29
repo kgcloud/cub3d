@@ -15,7 +15,7 @@ MLX_DIR = mlx
 MLX = libmlx.dylib
 CC = clang
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -g
 
 OBJ = $(SRC:.c=.o)
 DPD = $(SRC:.c=.d)

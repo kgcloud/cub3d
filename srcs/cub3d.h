@@ -6,7 +6,7 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 18:53:15 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/29 15:15:03 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/29 13:27:35 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ void	*ft_memset(void *b, int c, size_t len);
 int		transit(t_cub *cub);
 int			error(t_cub *cub);
 int		argumenterr(int ac, char **av);
-int			start(int ac, char **av);
+int			start(int ac, char **av, t_cub *cub);
 
 #endif
