@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   start.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: KgCloud <KgCloud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:46:32 by cloud             #+#    #+#             */
-/*   Updated: 2021/04/29 13:47:19 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/06/02 15:59:35 by KgCloud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		recupinfo(t_cub *cub, char **av)
+int	recupinfo(t_cub *cub, char **av)
 {
 	if ((cub->fd = open(av[1], O_DIRECTORY)) != -1)
 		return (0);
@@ -39,7 +39,7 @@ int		recupinfo(t_cub *cub, char **av)
 	return (1);
 }
 
-int			start(int ac, char **av,t_cub *cub)
+int	start(int ac, char **av,t_cub *cub)
 {
 	if (!(cub = malloc(sizeof(t_cub))))
 		return (-1);
@@ -55,7 +55,7 @@ int			start(int ac, char **av,t_cub *cub)
 	return (0);
 }
 
-#include <mlx.h>
+/*#include <mlx.h>
 
 typedef struct  s_data {
     void        *img;
@@ -113,4 +113,4 @@ int		main(int ac, char **av)
 	
 	start(ac, av,cub);
 	printcub(cub);
-}
+}*/

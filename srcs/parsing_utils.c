@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cloud <cloud@student.42.fr>                +#+  +:+       +#+        */
+/*   By: KgCloud <KgCloud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:41:41 by cloud             #+#    #+#             */
-/*   Updated: 2021/03/11 13:54:30 by cloud            ###   ########.fr       */
+/*   Updated: 2021/06/02 15:57:41 by KgCloud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int					i;
 	int					neg;
@@ -37,7 +37,7 @@ int		ft_atoi(const char *str)
 
 char	*ft_strchr(char *str, int c)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -51,9 +51,9 @@ char	*ft_strchr(char *str, int c)
 	return (NULL);
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s1[i] != 0)
@@ -64,5 +64,3 @@ int		ft_strcmp(char *s1, char *s2)
 	}
 	return (s1[i] - s2[i]);
 }
-
-
